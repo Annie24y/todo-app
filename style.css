@@ -24,5 +24,19 @@ button {
 }
 
 li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f0f0;
+  padding: 8px;
+  border-radius: 6px;
   margin-top: 10px;
+}
+
+li button {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 4px;
 }
