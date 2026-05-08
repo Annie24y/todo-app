@@ -40,3 +40,9 @@ li button {
   padding: 5px 8px;
   border-radius: 4px;
 }
+
+/* completed task style */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
