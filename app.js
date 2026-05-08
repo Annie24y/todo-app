@@ -11,6 +11,11 @@ function addTask() {
   let span = document.createElement("span");
   span.textContent = task;
 
+  // mark as completed
+  span.onclick = function () {
+    span.classList.toggle("completed");
+  };
+
   // delete button
   let deleteBtn = document.createElement("button");
   deleteBtn.textContent = "Delete";
