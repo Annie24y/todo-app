@@ -12,16 +12,16 @@ function addTask() {
 
   if (taskText === "") return;
 
-  // Add to UI
+  // Add task to UI
   createTask(taskText, false);
 
-  // Add to array
+  // Add task to array
   tasks.push({
     text: taskText,
     completed: false
   });
 
-  // Save to localStorage
+  // Save tasks
   saveTasks();
 
   // Clear input
@@ -35,13 +35,15 @@ function createTask(taskText, completed) {
   let span = document.createElement("span");
   span.textContent = taskText;
 
+  // Apply completed style if needed
   if (completed) {
     span.classList.add("completed");
   }
 
-  // Toggle completed
+  // Toggle completed state
   span.onclick = function () {
     span.classList.toggle("completed");
+
     updateTaskStatus(
       taskText,
       span.classList.contains("completed")
@@ -85,4 +87,19 @@ function updateTaskStatus(taskText, completed) {
   });
 
   saveTasks();
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+  }
+}
+
+// Load saved dark mode preference
+if (localStorage.getItem("darkMode") === "enabled") {
+  document.body.classList.add("dark-mode");
 }
