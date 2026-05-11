@@ -4,6 +4,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  transition: background 0.3s, color 0.3s;
 }
 
 .container {
@@ -11,6 +12,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   width: 300px;
+  transition: background 0.3s, color 0.3s;
 }
 
 input {
@@ -46,6 +48,7 @@ li button {
   text-decoration: line-through;
   opacity: 0.6;
 }
+
 /* Dark mode */
 .dark-mode {
   background: #121212;
@@ -68,4 +71,30 @@ li button {
 
 .dark-mode li button {
   background: #d32f2f;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  body {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 8px;
+    box-sizing: border-box;
+  }
 }
