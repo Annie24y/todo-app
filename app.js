@@ -1,4 +1,3 @@
-
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 // Render saved tasks when the page loads
@@ -103,3 +102,10 @@ function toggleDarkMode() {
 if (localStorage.getItem("darkMode") === "enabled") {
   document.body.classList.add("dark-mode");
 }
+
+// Press Enter to add a task
+document.getElementById("taskInput").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    addTask();
+  }
+});
